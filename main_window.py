@@ -1,12 +1,13 @@
 import os
-import sys
 from PyQt5.QtGui import *
 from PyQt5.QtCore import *
 from PyQt5.QtWidgets import *
+import cv2
 from Ui_main_window import Ui_MainWindow
 from dialogs.error import ErrorMessage
 from PIL import Image
-import zxing
+import zxingcpp
+from matplotlib.image import imread
 
 
 class MainWindow(QMainWindow):
@@ -39,10 +40,14 @@ class MainWindow(QMainWindow):
         self.image_path = image_path[0]
 
     def decode_aztec_code(self):
-        reader = zxing.BarCodeReader()
-        barcode = reader.decode(self.image_path)
-        print(barcode.raw)
-        self.ui.Te_decoded_text.setText(barcode.raw)
+        img = cv2.imread(self.image_path)
+        found_aztec_codes = zxingcpp.read_barcodes(img)
+        for code in found_aztec_codes:
+            self.ui.Te_decoded_text.setText("Found barcode:\n Text:    '{}'\n Format:   {}\n Position: {}".format(code.text, code.format, code.position))
+        if len(found_aztec_codes) == 0:
+            self.ui.Te_decoded_text.setText("Could not find any barcodes.")
+        # barcode = reader.decode(self.image_path)
+        # self.ui.Te_decoded_text.setText(barcode.raw)
 
     # def open_window(self, image_path):
     #     image = imageWindow(image_path)
