@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'c:\Users\sugil\OneDrive\Pulpit\Inżynierka\Ui_Main_Window.ui'
+# Form implementation generated from reading ui file 'c:\Users\sugil\OneDrive\Dokumenty\GitHub\Aztec-code-decoder\Ui_Main_Window.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.9
 #
@@ -14,25 +14,60 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(800, 523)
+        MainWindow.resize(833, 508)
+        MainWindow.setMinimumSize(QtCore.QSize(833, 508))
+        MainWindow.setStyleSheet("background-color: rgba(255,255,255,255)")
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
+        self.horizontalLayout_3 = QtWidgets.QHBoxLayout(self.centralwidget)
+        self.horizontalLayout_3.setObjectName("horizontalLayout_3")
+        self.horizontalLayout_2 = QtWidgets.QHBoxLayout()
+        self.horizontalLayout_2.setSizeConstraint(QtWidgets.QLayout.SetDefaultConstraint)
+        self.horizontalLayout_2.setContentsMargins(14, 14, 14, 14)
+        self.horizontalLayout_2.setSpacing(28)
+        self.horizontalLayout_2.setObjectName("horizontalLayout_2")
         self.Lb_Image = QtWidgets.QLabel(self.centralwidget)
-        self.Lb_Image.setGeometry(QtCore.QRect(20, 20, 401, 421))
+        self.Lb_Image.setStyleSheet("border: 1px solid rgb(48,48,48,255);")
         self.Lb_Image.setText("")
         self.Lb_Image.setAlignment(QtCore.Qt.AlignCenter)
         self.Lb_Image.setObjectName("Lb_Image")
-        self.verticalLayoutWidget = QtWidgets.QWidget(self.centralwidget)
-        self.verticalLayoutWidget.setGeometry(QtCore.QRect(480, 80, 301, 300))
-        self.verticalLayoutWidget.setObjectName("verticalLayoutWidget")
-        self.Vlayout = QtWidgets.QVBoxLayout(self.verticalLayoutWidget)
-        self.Vlayout.setContentsMargins(20, 20, 20, 20)
+        self.horizontalLayout_2.addWidget(self.Lb_Image)
+        self.Vlayout = QtWidgets.QVBoxLayout()
+        self.Vlayout.setContentsMargins(0, 6, 0, 6)
         self.Vlayout.setSpacing(20)
         self.Vlayout.setObjectName("Vlayout")
-        self.Btn_open_image = QtWidgets.QPushButton(self.verticalLayoutWidget)
+        self.verticalLayout = QtWidgets.QVBoxLayout()
+        self.verticalLayout.setSpacing(4)
+        self.verticalLayout.setObjectName("verticalLayout")
+        self.label = QtWidgets.QLabel(self.centralwidget)
+        self.label.setMinimumSize(QtCore.QSize(0, 28))
+        self.label.setMaximumSize(QtCore.QSize(16777215, 28))
+        self.label.setStyleSheet("font-size: 16px;")
+        self.label.setObjectName("label")
+        self.verticalLayout.addWidget(self.label)
+        self.Lb_image_path = QtWidgets.QLabel(self.centralwidget)
+        self.Lb_image_path.setMinimumSize(QtCore.QSize(0, 23))
+        self.Lb_image_path.setMaximumSize(QtCore.QSize(16777215, 23))
+        self.Lb_image_path.setStyleSheet("border: 1px solid grey;\n"
+"border-radius: 6px;\n"
+"padding: 4px 8px;\n"
+"backgorund-color: rgb(255, 255, 255);\n"
+"color: rgb(189, 189, 189)")
+        self.Lb_image_path.setObjectName("Lb_image_path")
+        self.verticalLayout.addWidget(self.Lb_image_path)
+        self.Btn_open_image = QtWidgets.QPushButton(self.centralwidget)
+        self.Btn_open_image.setStyleSheet("border: 1px solid rgb(189, 189, 189);\n"
+"border-radius: 6px;\n"
+"background-color: rgb(255, 255, 255);\n"
+"padding: 4px 16px;\n"
+"font-weight: bold;")
         self.Btn_open_image.setObjectName("Btn_open_image")
-        self.Vlayout.addWidget(self.Btn_open_image)
-        self.Gb_options = QtWidgets.QGroupBox(self.verticalLayoutWidget)
+        self.verticalLayout.addWidget(self.Btn_open_image)
+        self.verticalLayout.setStretch(0, 1)
+        self.verticalLayout.setStretch(1, 1)
+        self.verticalLayout.setStretch(2, 1)
+        self.Vlayout.addLayout(self.verticalLayout)
+        self.Gb_options = QtWidgets.QGroupBox(self.centralwidget)
         self.Gb_options.setObjectName("Gb_options")
         self.horizontalLayout = QtWidgets.QHBoxLayout(self.Gb_options)
         self.horizontalLayout.setObjectName("horizontalLayout")
@@ -43,18 +78,22 @@ class Ui_MainWindow(object):
         self.Rbtn_odszumianie_2.setObjectName("Rbtn_odszumianie_2")
         self.horizontalLayout.addWidget(self.Rbtn_odszumianie_2)
         self.Vlayout.addWidget(self.Gb_options)
-        self.Btn_decode = QtWidgets.QPushButton(self.verticalLayoutWidget)
+        self.Btn_decode = QtWidgets.QPushButton(self.centralwidget)
         self.Btn_decode.setObjectName("Btn_decode")
         self.Vlayout.addWidget(self.Btn_decode)
-        self.Lb_decoded_code = QtWidgets.QLabel(self.verticalLayoutWidget)
+        self.Lb_decoded_code = QtWidgets.QLabel(self.centralwidget)
         self.Lb_decoded_code.setObjectName("Lb_decoded_code")
         self.Vlayout.addWidget(self.Lb_decoded_code)
-        self.Te_decoded_text = QtWidgets.QTextEdit(self.verticalLayoutWidget)
+        self.Te_decoded_text = QtWidgets.QTextEdit(self.centralwidget)
         self.Te_decoded_text.setObjectName("Te_decoded_text")
         self.Vlayout.addWidget(self.Te_decoded_text)
+        self.horizontalLayout_2.addLayout(self.Vlayout)
+        self.horizontalLayout_2.setStretch(0, 1)
+        self.horizontalLayout_2.setStretch(1, 1)
+        self.horizontalLayout_3.addLayout(self.horizontalLayout_2)
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 800, 21))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 833, 21))
         self.menubar.setObjectName("menubar")
         self.menuO_programie = QtWidgets.QMenu(self.menubar)
         self.menuO_programie.setObjectName("menuO_programie")
@@ -73,7 +112,9 @@ class Ui_MainWindow(object):
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
-        self.Btn_open_image.setText(_translate("MainWindow", "Otwórz obraz"))
+        self.label.setText(_translate("MainWindow", "Otwórz obraz"))
+        self.Lb_image_path.setText(_translate("MainWindow", "Ścieżka obrazu"))
+        self.Btn_open_image.setText(_translate("MainWindow", "Wybierz obraz"))
         self.Gb_options.setTitle(_translate("MainWindow", "Opcje odszumiania"))
         self.Rbtn_odszumianie_1.setText(_translate("MainWindow", "Opcja 1"))
         self.Rbtn_odszumianie_2.setText(_translate("MainWindow", "Opcja 2"))

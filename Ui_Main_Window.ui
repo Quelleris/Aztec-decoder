@@ -6,111 +6,195 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>523</height>
+    <width>833</width>
+    <height>508</height>
    </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>833</width>
+    <height>508</height>
+   </size>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgba(255,255,255,255)</string>
+  </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QLabel" name="Lb_Image">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>20</y>
-      <width>401</width>
-      <height>421</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="alignment">
-     <set>Qt::AlignCenter</set>
-    </property>
-   </widget>
-   <widget class="QWidget" name="verticalLayoutWidget">
-    <property name="geometry">
-     <rect>
-      <x>480</x>
-      <y>80</y>
-      <width>301</width>
-      <height>300</height>
-     </rect>
-    </property>
-    <layout class="QVBoxLayout" name="Vlayout">
-     <property name="spacing">
-      <number>20</number>
-     </property>
-     <property name="leftMargin">
-      <number>20</number>
-     </property>
-     <property name="topMargin">
-      <number>20</number>
-     </property>
-     <property name="rightMargin">
-      <number>20</number>
-     </property>
-     <property name="bottomMargin">
-      <number>20</number>
-     </property>
-     <item>
-      <widget class="QPushButton" name="Btn_open_image">
-       <property name="text">
-        <string>Otwórz obraz</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QGroupBox" name="Gb_options">
-       <property name="title">
-        <string>Opcje odszumiania</string>
-       </property>
-       <layout class="QHBoxLayout" name="horizontalLayout">
+   <layout class="QHBoxLayout" name="horizontalLayout_3">
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="1,1">
+      <property name="spacing">
+       <number>28</number>
+      </property>
+      <property name="sizeConstraint">
+       <enum>QLayout::SetDefaultConstraint</enum>
+      </property>
+      <property name="leftMargin">
+       <number>14</number>
+      </property>
+      <property name="topMargin">
+       <number>14</number>
+      </property>
+      <property name="rightMargin">
+       <number>14</number>
+      </property>
+      <property name="bottomMargin">
+       <number>14</number>
+      </property>
+      <item>
+       <widget class="QLabel" name="Lb_Image">
+        <property name="styleSheet">
+         <string notr="true">border: 1px solid rgb(48,48,48,255);</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <layout class="QVBoxLayout" name="Vlayout">
+        <property name="spacing">
+         <number>20</number>
+        </property>
+        <property name="leftMargin">
+         <number>0</number>
+        </property>
+        <property name="topMargin">
+         <number>6</number>
+        </property>
+        <property name="rightMargin">
+         <number>0</number>
+        </property>
+        <property name="bottomMargin">
+         <number>6</number>
+        </property>
         <item>
-         <widget class="QRadioButton" name="Rbtn_odszumianie_1">
+         <layout class="QVBoxLayout" name="verticalLayout" stretch="1,1,1">
+          <property name="spacing">
+           <number>4</number>
+          </property>
+          <item>
+           <widget class="QLabel" name="label">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>28</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>16777215</width>
+              <height>28</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">font-size: 16px;</string>
+            </property>
+            <property name="text">
+             <string>Otwórz obraz</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="Lb_image_path">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>23</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>16777215</width>
+              <height>23</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">border: 1px solid grey;
+border-radius: 6px;
+padding: 4px 8px;
+backgorund-color: rgb(255, 255, 255);
+color: rgb(189, 189, 189)</string>
+            </property>
+            <property name="text">
+             <string>Ścieżka obrazu</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="Btn_open_image">
+            <property name="styleSheet">
+             <string notr="true">border: 1px solid rgb(189, 189, 189);
+border-radius: 6px;
+background-color: rgb(255, 255, 255);
+padding: 4px 16px;
+font-weight: bold;</string>
+            </property>
+            <property name="text">
+             <string>Wybierz obraz</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QGroupBox" name="Gb_options">
+          <property name="title">
+           <string>Opcje odszumiania</string>
+          </property>
+          <layout class="QHBoxLayout" name="horizontalLayout">
+           <item>
+            <widget class="QRadioButton" name="Rbtn_odszumianie_1">
+             <property name="text">
+              <string>Opcja 1</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QRadioButton" name="Rbtn_odszumianie_2">
+             <property name="text">
+              <string>Opcja 2</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="Btn_decode">
           <property name="text">
-           <string>Opcja 1</string>
+           <string>Rozszyfruj kod</string>
           </property>
          </widget>
         </item>
         <item>
-         <widget class="QRadioButton" name="Rbtn_odszumianie_2">
+         <widget class="QLabel" name="Lb_decoded_code">
           <property name="text">
-           <string>Opcja 2</string>
+           <string>Rozszyfrowany tekst:</string>
           </property>
          </widget>
+        </item>
+        <item>
+         <widget class="QTextEdit" name="Te_decoded_text"/>
         </item>
        </layout>
-      </widget>
-     </item>
-     <item>
-      <widget class="QPushButton" name="Btn_decode">
-       <property name="text">
-        <string>Rozszyfruj kod</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QLabel" name="Lb_decoded_code">
-       <property name="text">
-        <string>Rozszyfrowany tekst:</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QTextEdit" name="Te_decoded_text"/>
-     </item>
-    </layout>
-   </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>800</width>
+     <width>833</width>
      <height>21</height>
     </rect>
    </property>
