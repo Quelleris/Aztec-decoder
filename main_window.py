@@ -49,7 +49,7 @@ class MainWindow(QMainWindow):
         for code in found_aztec_codes:
             self.ui.Te_decoded_text.setText("Found barcode:\n Text:    '{}'\n Format:   {}\n Position: {}".format(code.text, code.format, code.position))
         if len(found_aztec_codes) == 0:
-            self.ui.Te_decoded_text.setText("Could not find any barcodes.")
+            self.ui.Te_decoded_text.setText("Nie znaleziono żadnych kodów Aztec.")
         cv2.imshow("image", denoised_image)
 
     def draw_aztec_codes_in_image(self):
@@ -80,15 +80,18 @@ class MainWindow(QMainWindow):
 
     def denoise_image_1(self):
         img = cv2.imread(self.image_path)
-        blur_mask = np.array([[1,2, 1],[2, 4,2],[1,2, 1]])
-        laplacian_mask = np.array([[-1,-1, -1],[-1, 9,-1],[-1,-1, -1]])
-        res_step1 = cv2.GaussianBlur(img, (3,3), 0)
+        blur_mask = np.ones((3,3)) / 9
+        laplacian_mask =  np.array([[ 1,-2, 1],[-2, 5,-2],[ 1,-2, 1]])
+        # res_step1 =  cv2.filter2D(src=img,ddepth=-1, kernel=blur_mask)
+        res_step1 = cv2.GaussianBlur(img, (3, 3), 0)
         res_step2 = cv2.filter2D(src=res_step1,ddepth=-1, kernel=laplacian_mask)
-        return res_step2
+        new_img = cv2.convertScaleAbs(res_step2)
+        return new_img
     
     def denoise_image_2(self):
         img = cv2.imread(self.image_path)
-        res_step2 = cv2.medianBlur(img, 3)
+        res_step1 = cv2.GaussianBlur(img, (5, 5), 0)
+        res_step2 = cv2.medianBlur(res_step1, 5)
         return res_step2
     
     # def open_about_dialog(self):
